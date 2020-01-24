@@ -11,7 +11,7 @@
 # Uncomment and change 'MINAPI' and 'MAXAPI' to the minimum and maximum android version for your mod
 # Uncomment DYNLIB if you want libs installed to vendor for oreo+ and system for anything older
 # Uncomment DEBUG if you want full debug logs (saved to /sdcard)
-#MINAPI=21
+MINAPI=28
 #MAXAPI=25
 #DYNLIB=true
 #DEBUG=true
@@ -41,7 +41,7 @@ REPLACE="
 ##########################################################################################
 
 set_permissions() {
-  : # Remove this if adding to this function
+  # Remove this if adding to this function
 
   # Note that all files/folders in magisk module directory have the $MODPATH prefix - keep this prefix on all of your files/folders
   # Some examples:
@@ -57,6 +57,13 @@ set_permissions() {
   
   # set_perm $MODPATH/system/lib/libart.so 0 0 0644
   # set_perm /data/local/tmp/file.txt 0 0 644
+  set_perm_recursive  $MODPATH  0  0  0755  0644
+  set_perm            $MODPATH/system/bin/mkfs.exfat  0  2000  0755  u:object_r:e2fs_exec:s0
+  set_perm            $MODPATH/system/bin/mkfs.ntfs  0  2000  0755  u:object_r:e2fs_exec:s0
+  set_perm            $MODPATH/system/bin/fsck.exfat  0  2000  0755  u:object_r:fsck_exec:s0
+  set_perm            $MODPATH/system/bin/fsck.ntfs  0  2000  0755  u:object_r:fsck_exec:s0
+  set_perm            $MODPATH/system/bin/mount.ntfs  0  2000  0755  u:object_r:system_file:s0
+  set_perm            $MODPATH/system/bin/vold  0  2000  0755  u:object_r:system_file:s0
 }
 
 ##########################################################################################

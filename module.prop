@@ -1,7 +1,7 @@
-id=MMT-Ex
-name=Magisk Module Template Extended
-version=v1.2
-versionCode=3
-author=Zackptg5
-description=
-support=https://forum.xda-developers.com/apps/magisk/MMT-Extended
+id=cosmo-fs
+name=exFAT/NTFS support for the Cosmo Communicator
+version=v1
+versionCode=1
+author=mithrandir
+description=Enables exFAT/NTFS usage on Cosmo Communicator with Android 9
+minMagisk=19000

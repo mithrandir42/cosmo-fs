@@ -63,6 +63,7 @@ set_permissions() {
   set_perm            $MODPATH/system/bin/fsck.exfat  0  2000  0755  u:object_r:fsck_exec:s0
   set_perm            $MODPATH/system/bin/fsck.ntfs  0  2000  0755  u:object_r:fsck_exec:s0
   set_perm            $MODPATH/system/bin/mount.ntfs  0  2000  0755  u:object_r:system_file:s0
+  set_perm            $MODPATH/system/bin/mount.ntfs3g  0  2000  0755  u:object_r:system_file:s0
   set_perm            $MODPATH/system/bin/vold  0  2000  0755  u:object_r:system_file:s0
 }
 
